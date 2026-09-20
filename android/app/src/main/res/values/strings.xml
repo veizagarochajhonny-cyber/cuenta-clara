@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cuenta Clara</string>
+    <string name="title_activity_main">Cuenta Clara</string>
+    <string name="package_name">com.cuentaclara.app</string>
+    <string name="custom_url_scheme">com.cuentaclara.app</string>
+</resources>
