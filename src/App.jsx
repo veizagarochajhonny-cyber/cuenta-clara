@@ -311,7 +311,7 @@ export default function App() {
 
     const formatoARS = (valor) => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 }).format(valor);
     
-    let originUrl = window.location.origin;
+    let originUrl = "https://cuenta-clara-liard.vercel.app";
     if (!originUrl.startsWith("http://") && !originUrl.startsWith("https://")) {
       originUrl = "https://" + originUrl;
     }
