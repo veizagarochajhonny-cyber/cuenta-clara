@@ -1,5 +1,13 @@
 ﻿import { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
+const formatearTelefonoWA = (num) => {
+  if (!num) return '';
+  let clean = num.toString().replace(/\D/g, '');
+  if (clean.startsWith('549')) return clean;
+  if (clean.startsWith('54')) return '549' + clean.slice(2);
+  if (clean.startsWith('0')) clean = clean.substring(1);
+  return '549' + clean;
+};
 
 export default function App() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -324,9 +332,8 @@ export default function App() {
     ].join("\n");
 
     const mensajeEncoded = encodeURIComponent(mensaje);
-    const numLimpio = cliente.telefono.replace(/[^0-9]/g, "");
-    
-    window.open(`https://wa.me/${numLimpio}?text=${mensajeEncoded}`, "_blank");
+    const numLimpio = formatearTelefonoWA(cliente.telefono);
+window.open(`https://wa.me/${numLimpio}?text=${mensajeEncoded}`, '_blank');
   };
 
   const formatPesos = (monto) => {
